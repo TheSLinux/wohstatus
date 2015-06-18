@@ -119,7 +119,7 @@ if ARGV.index("--option2")
     count += 1
     event = get_status(timestamp)
     puts "<tr>"
-    puts "  <td class='timestamp'>#{timestamp}: #{Time.at(timestamp).strftime("%Y-%b-%d %H:%M:%S")}</td>"
+    puts "  <td class='timestamp'>#{Time.at(timestamp).strftime("%Y-%b-%d %H:%M:%S")}</td>"
     puts "  <td class='status'><img class='icon' src='./images/#{event["status"]}.png' /></td>"
     puts "  <td class='message'>#{event['message']}</td>"
     puts "</tr>"
