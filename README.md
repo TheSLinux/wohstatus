@@ -8,13 +8,13 @@ from `YAML` data.
 Make you have `Bash` and `Ruby` on your system.
 
 There are already sample input data and sample output pages.
-You can make a backup before trying
 
-    $ cp -r output/ output.backup/
     $ ./compile.sh
 
 The output will be written to `output` directory.
 Open `status.html` from that directory to see.
+
+You can see for an example http://icy.theslinux.org/wohstatus/status.html.
 
 ## Data format
 
