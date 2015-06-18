@@ -39,7 +39,7 @@ Each `YAML` file may contain `settings` or `events` attribute, as below
         status: up|down|limited|info|...
         message: Your input message
 
-A timestapm should be in `RFC-2822` format. You can get this
+A timestamp should be in `RFC-2822` format. You can get this
 with `date -R` command.
 
 A `status` is valid if there is an image of the same found under
