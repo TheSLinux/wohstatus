@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <title>WohStatus - ArchLinuxVn-Mirror</title>
+  <head>
+  <style>
+  <!--
+  table {
+    border-collapse: collapse;
+  }
+  td {
+    border: 1px solid  #e4e4e4;
+    padding: 10px;
+  }
+  td.status {
+    width: 64px;
+    text-align: center;
+  }
+  td.service {
+    text-align: center;
+  }
+  img.icon {
+    width: 16px;
+    height: 16px;
+  }
+  -->
+  </style>
+  </head>
+  <body>
+  <h3>WohStatus - ArchLinuxVn-Mirror</h3>
+<table>
+<tr>
+  <td class='timestamp'>1434647738: 2015-Jun-19 00:15:38</td>
+  <td class='status'><img class='icon' src='./images/up.png' /></td>
+  <td class='message'>Up and running</td>
+</tr>
+<tr>
+  <td class='timestamp'>1434647558: 2015-Jun-19 00:12:38</td>
+  <td class='status'><img class='icon' src='./images/info.png' /></td>
+  <td class='message'>Service reboot</td>
+</tr>
+<tr>
+  <td class='timestamp'>1434647438: 2015-Jun-19 00:10:38</td>
+  <td class='status'><img class='icon' src='./images/down.png' /></td>
+  <td class='message'>Service outage due to disk error</td>
+</tr>
+<tr>
+  <td class='timestamp'>1434476142: 2015-Jun-17 00:35:42</td>
+  <td class='status'><img class='icon' src='./images/down.png' /></td>
+  <td class='message'>Server was drunk</td>
+</tr>
+</table>
+
+<h3>Status Legends</h3>
+<ul>
+  <li>
+    <img class="icon" src="./images/up.png" /> Service is up and running
+  </li>
+  <li>
+    <img class="icon" src="./images/down.png" /> Service is down
+  </li>
+  <li>
+    <img class="icon" src="./images/limited.png" /> Service is running but has limited function
+  </li>
+  <li>
+    <img class="icon" src="./images/maintenance.png" /> Service is being maintained
+  </li>
+  <li>
+    <img class="icon" src="./images/bug.png" /> Unknown status
+  </li>
+  <li>
+    <img class="icon" src="./images/info.png" /> Information
+  </li>
+</ul>
+
+<h3><a href="https://github.com/icy/wohstatus">Powered by <em>WohStatus</em></a></h3>
+<h3><a href="https://github.com/twilio/stashboard">Icons come from Stashboard</a></h3>
+</body>
+</html>

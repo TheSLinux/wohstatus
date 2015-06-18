@@ -1,0 +1,12 @@
+---
+events:
+  "Fri, 19 Jun 2015 00:15:38 +0700": Up and running
+  "Fri, 19 Jun 2015 00:12:38 +0700":
+    message: Service reboot
+    status: info
+  "Fri, 19 Jun 2015 00:10:38 +0700":
+    message: Service outage due to disk error
+    status: down
+  "Wed, 17 Jun 2015 00:35:42 +0700":
+    status: down
+    message: Server was drunk
