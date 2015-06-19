@@ -57,7 +57,12 @@ Try the script `add.sh`. For example
     $ ./add.sh data/Testing/ down "Something went wrong"
 
 New data will be appended to the file `data/Testing/2015.yaml`
-(`2015` or the current year.)
+(`2015` or the current year.) If you don't want to use current year
+as output file, use `WOHSTATUS_OUTPUT`, as below
+
+    $ WOHSTATUS_OUTPUT=testing ./add data/Testing/ down "Testing"
+
+New data will be written to `data/Testing/testing.yaml`.
 
 ## Author. License
 
