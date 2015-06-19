@@ -8,7 +8,7 @@ _D_OUTPUT="${D_OUTPUT:-./output/}"
 _DATABASE="${1:-}"; shift
 _STATUS="${1:-}"; shift
 _MESSAGE="${@}"
-_FYAML="$_DATABASE/$(date +%Y).yaml"
+_FYAML="$_DATABASE/${WOHSTATUS_OUTPUT:-$(date +%Y)}.yaml"
 
 if [[ -z "$_MESSAGE" ]]; then
   echo >&2 ":: Syntax: $0 <database dir> <status> <message>"
@@ -58,3 +58,7 @@ which diff >/dev/null 2>&1 \
 && diff "$_FYAML" "$_FTEMP" \
 || true
 mv -iv "$_FTEMP" "$_FYAML"
+
+if [[ -f "$_FTEMP" ]]; then
+  rm -fv "$_FTEMP"
+fi
