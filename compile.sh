@@ -19,6 +19,10 @@ __html_head() {
   <head>
   <style>
   <!--
+  body {
+    width: 100%;
+  }
+
   table {
     border-collapse: collapse;
   }
@@ -37,6 +41,17 @@ __html_head() {
     width: 16px;
     height: 16px;
   }
+
+  @media screen and (max-device-width: 500px){
+    body {
+      width: 100%;
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    td.status {
+      width: 20px;
+    }
+  }
   -->
   </style>
   </head>
@@ -49,7 +64,7 @@ EOF
 __html_tail() {
   cat <<'EOF'
 
-<h3>Status Legends</h3>
+<h3>Status Legend</h3>
 <ul>
   <li>
     <img class="icon" src="./images/up.png" /> Service is up and running
