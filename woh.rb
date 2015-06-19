@@ -23,8 +23,8 @@ def get_status(timestamp)
   return nil if timestamp.nil?
   event = ($events2[timestamp] || {})
   if not event.empty?
-    status = (event["status"] || "OK")
-    message = (event["message"] || "Good")
+    status = (event["status"] || "up")
+    message = (event["message"] || "(empty message)")
     event = {"status" => status, "message" => message}
     return event
   end
