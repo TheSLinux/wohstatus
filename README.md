@@ -2,7 +2,7 @@
 
 * [Description](#description)
 * [Getting started](#getting-started)
-* [Adding new event](#add-new-event)
+* [Adding new event](#adding-new-event)
 * [Data format](#data-format)
 * [Author. License](#author-license)
 
