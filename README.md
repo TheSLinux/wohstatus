@@ -50,9 +50,14 @@ there is a file `output/images/lock.png`.
 Though you can provide `settings` many times, the last one wins.
 All you need is to put all settings under a private `settings.yaml` file.
 
-## TODO
+## Add new event
 
-* Add `add.sh` script to add new event
+Try the script `add.sh`. For example
+
+    $ ./add.sh data/Testing/ down "Something went wrong"
+
+New data will be appended to the file `data/Testing/2015.yaml`
+(`2015` or the current year.)
 
 ## Author. License
 
