@@ -15,8 +15,8 @@ __html_head() {
 
 <!DOCTYPE html>
 <html lang="en">
-  <title>${WOHSTATUS_TITLE:-WohStatus}${_subtitle}</title>
   <head>
+  <title>${WOHSTATUS_TITLE:-WohStatus}${_subtitle}</title>
   <style>
   <!--
   body {
