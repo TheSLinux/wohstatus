@@ -1,3 +1,11 @@
+## Table of contents
+
+* [Description](#description)
+* [Getting started](#getting-started)
+* [Adding new event](#add-new-event)
+* [Data format](#data-format)
+* [Author. License](#author-license)
+
 ## Description
 
 Generate almost beautiful and professional static status pages
@@ -15,6 +23,20 @@ The output will be written to `output` directory.
 Open `status.html` from that directory to see.
 
 You can see for an example http://icy.theslinux.org/wohstatus/status.html.
+
+## Adding new event
+
+Try the script `add.sh`. For example
+
+    $ ./add.sh data/Testing/ down "Something went wrong"
+
+New data will be appended to the file `data/Testing/2015.yaml`
+(`2015` or the current year.) If you don't want to use current year
+as output file, use `WOHSTATUS_OUTPUT`, as below
+
+    $ WOHSTATUS_OUTPUT=testing ./add data/Testing/ down "Testing"
+
+New data will be written to `data/Testing/testing.yaml`.
 
 ## Data format
 
@@ -49,20 +71,6 @@ there is a file `output/images/lock.png`.
 
 Though you can provide `settings` many times, the last one wins.
 All you need is to put all settings under a private `settings.yaml` file.
-
-## Add new event
-
-Try the script `add.sh`. For example
-
-    $ ./add.sh data/Testing/ down "Something went wrong"
-
-New data will be appended to the file `data/Testing/2015.yaml`
-(`2015` or the current year.) If you don't want to use current year
-as output file, use `WOHSTATUS_OUTPUT`, as below
-
-    $ WOHSTATUS_OUTPUT=testing ./add data/Testing/ down "Testing"
-
-New data will be written to `data/Testing/testing.yaml`.
 
 ## Author. License
 
