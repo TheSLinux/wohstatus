@@ -77,3 +77,8 @@ All you need is to put all settings under a private `settings.yaml` file.
 The author is Anh K. Huynh.
 
 This work is released under terms of a `MIT` license.
+
+The icons (except `external.png`)
+come from [StashBoard](https://github.com/twilio/stashboard/) project
+and you may read [this ticket](https://github.com/twilio/stashboard/issues/76)
+regarding license issue.
