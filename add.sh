@@ -50,7 +50,7 @@ ruby \
     status = ENV["WOHSTATUS_SYMBOL"]
     message = ENV["WOHSTATUS_MESSAGE"]
 
-    data["events"][Time.now.to_date.rfc2822] = {"status" => status, "message" => message}
+    data["events"][DateTime.parse(Time.now.to_s).rfc2822] = {"status" => status, "message" => message}
     puts YAML.dump(data)
   '
 
