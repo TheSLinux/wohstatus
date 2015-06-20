@@ -21,7 +21,8 @@ def look_up_least_date(timestamp)
 end
 
 def get_status(timestamp)
-  return nil if timestamp.nil?
+  return {"status" => "bug", "message" => "Unknown status"} if timestamp.nil?
+
   event = ($events2[timestamp] || {})
   if not event.empty?
     status = (event["status"] || "up")
@@ -132,7 +133,7 @@ end
 # Option 2: Print the last status of a service
 ########################################################################
 if ARGV.index("--option3")
-  event = get_status(look_up_least_date(Time.now.to_i))
+  event = get_status(Time.now.to_i)
   puts "#{event['status']}\t#{event['message']}"
   exit(0)
 end
