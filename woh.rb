@@ -14,10 +14,8 @@ def look_up_least_date(timestamp)
   pos = cloned.index(timestamp)
   if (pos and (pos < cloned.size))
     return cloned[pos + 1]
-  else
-    event = {"status" => "bug", "message" => "Unknown status"}
-    return event
   end
+  return nil
 end
 
 def get_status(timestamp)
@@ -31,12 +29,15 @@ def get_status(timestamp)
     return event
   end
 
-  last_recored_date = look_up_least_date(timestamp)
-  event = Hash.new
-  event["message"] = $events2[last_recored_date]["message"]
-  event["status"] = $events2[last_recored_date]["status"]
+  if last_recored_date = look_up_least_date(timestamp)
+    event = Hash.new
+    event["message"] = $events2[last_recored_date]["message"]
+    event["status"] = $events2[last_recored_date]["status"]
 
-  event["message"] = "#{event["message"]} (cf. #{Time.at(last_recored_date)})"
+    event["message"] = "#{event["message"]} (cf. #{Time.at(last_recored_date)})"
+  else
+    event = {"status" => "bug", "message" => "Unknown status"}
+  end
 
   return event
 end
