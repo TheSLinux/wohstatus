@@ -14,6 +14,7 @@ from `YAML` data.
 ## Getting started
 
 Make you have `Bash` and `Ruby` on your system.
+You also need the popular tools: `find`, `grep`, `awk`.
 
 There are already sample input data and sample output pages.
 
@@ -37,6 +38,17 @@ as output file, use `WOHSTATUS_OUTPUT`, as below
     $ WOHSTATUS_OUTPUT=testing ./add data/Testing/ down "Testing"
 
 New data will be written to `data/Testing/testing.yaml`.
+
+## Sorting
+
+To have a specific order in the status dashboard for all services,
+it's quite tricky. You can do this by updating `./data/sort` as below
+
+    $ find data/ -mindepth 1 -maxdepth 1 -type d > data/sort
+
+Now you edit the file `data/sort` and change the order as you want.
+You can remove any service from the file; those services will be
+shown at the end of the dashboard, below any service listed in `data/sort`.
 
 ## Data format
 

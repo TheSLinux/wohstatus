@@ -96,7 +96,7 @@ EOF
 
 }
 
-
+# Print status information for all services
 __option1() {
   __html_head
 
@@ -109,22 +109,34 @@ __option1() {
   echo "</tr>"
 
   while read DIR; do
+    if [[ ! -d "$DIR/" ]]; then
+      echo >&2 ":: $FUNCNAME: Directory not found '$DIR'"
+      continue
+    fi
     if [[ -f "$DIR/ignore" ]]; then
       echo >&2 ":: $FUNCNAME: Ignore '$DIR'"
       continue
     fi
-
     export SERVICE="$(basename $DIR)"
     echo "<tr>"
     ./woh.rb --option1 < <(cat "$DIR"/*.yaml)
     echo "</tr>"
-  done < <(find data/ -mindepth 1 -maxdepth 1 -type d)
+  done \
+  < <(
+    {
+      [[ ! -f data/sort ]] || cat data/sort
+      find data/ -mindepth 1 -maxdepth 1 -type d
+    } \
+    | awk '!count[$0]++'
+  )
+
   echo "</table>"
 
   __html_tail
 }
 
 
+# Print status information for a specific service
 __option2() {
   while read DIR; do
     if [[ -f "$DIR/ignore" ]]; then
