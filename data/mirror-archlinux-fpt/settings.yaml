@@ -1,0 +1,4 @@
+---
+settings:
+  url: http://mirror-fpt-telecom.fpt.net/archlinux/
+  name: ArchLinux (fpt mirror)

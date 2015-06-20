@@ -1,0 +1,4 @@
+---
+settings:
+  name: ArchLinux mirror
+  uri: http://f.archlinuxvn.org/archlinux/

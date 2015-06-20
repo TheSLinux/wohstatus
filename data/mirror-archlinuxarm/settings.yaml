@@ -1,0 +1,4 @@
+---
+settings:
+  url: http://vn.mirror.archlinuxarm.org/arm/
+  name: ArchLinuxARM (mirror)

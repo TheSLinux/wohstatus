@@ -1,0 +1,20 @@
+---
+events:
+  Sat, 20 Jun 2015 21:26:24 +0700:
+    status: info
+    message: Mirror is out of sync (offset = 11562 minutes)
+  Sat, 20 Jun 2015 21:29:11 +0700:
+    status: limited
+    message: Mirror is out of sync (offset = 11565 minutes)
+  Sat, 20 Jun 2015 21:31:25 +0700:
+    status: limited
+    message: Mirror is out of sync (offset = 11567 minutes)
+  Sat, 20 Jun 2015 21:52:38 +0700:
+    status: limited
+    message: Mirror is out of sync (offset = 11588 minutes)
+  Sat, 20 Jun 2015 21:53:09 +0700:
+    status: limited
+    message: Mirror is out of sync (offset = 11589 minutes)
+  Sat, 20 Jun 2015 21:59:12 +0700:
+    status: down
+    message: Mirror is useless (out-of-sync > 7 days)
