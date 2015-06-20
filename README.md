@@ -3,6 +3,7 @@
 * [Description](#description)
 * [Getting started](#getting-started)
 * [Adding new event](#adding-new-event)
+* [Sorting](#sorting)
 * [Data format](#data-format)
 * [Author. License](#author-license)
 
