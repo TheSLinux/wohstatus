@@ -75,7 +75,7 @@ events.each do |datestring,details|
 end
 
 ########################################################################
-# Option 1: Print a row of statuses
+# Option 1: Print a row of statuses of a service
 ########################################################################
 
 if ARGV.index("--option1")
@@ -106,7 +106,7 @@ if ARGV.index("--option1")
 end
 
 ########################################################################
-# Option 2: Print all statuses
+# Option 2: Print all statuses of a service
 ########################################################################
 
 if ARGV.index("--option2")
@@ -128,6 +128,15 @@ if ARGV.index("--option2")
     puts "</tr>"
   end
   puts "</table>"
+  exit(0)
+end
+
+########################################################################
+# Option 2: Print the last status of a service
+########################################################################
+if ARGV.index("--option3")
+  event = get_status(look_up_least_date(Time.now.to_i))
+  puts "#{event['status']}\t#{event['message']}"
   exit(0)
 end
 
