@@ -83,21 +83,19 @@ if ARGV.index("--option1")
   start_of_today = start_of_today - (start_of_today.hour * 3600 + start_of_today.min * 60 + start_of_today.sec)
   end_of_today = start_of_today + 24 * 3600
 
-  name = ENV["SERVICE"]
-  if name
-    link = "#{name.downcase}.html"
-    if $settings["url"]
-      external = "<a href='#{$settings["url"]}'><img class='icon' src='./images/external.png' /></a>"
-    else
-      external = ""
-    end
-  else
-    name = $settings["name"] || "Unknown"
-    link = $settings["url"] || "#"
-    externl = ""
+  link = "#"
+  if service = ENV["SERVICE"]
+    link = "#{service.downcase}.html"
   end
 
-  puts "  <td class=\"service\"><a href=\"#{link}\">#{name}</a> #{external}</td>"
+  display_name = ($settings["name"] || ENV["SERVICE"] || "Unknown")
+
+  external = ""
+  if $settings["url"]
+    external = " <a href='#{$settings["url"]}'><img class='icon' src='./images/external.png' /></a>"
+  end
+
+  puts "  <td class=\"service\"><a href=\"#{link}\">#{display_name}</a>#{external}</td>"
   # Return the last known even (a week ago)
   %w{0 1 2 3 4 5 6}.map(&:to_i).each do |offset|
     timestamp = end_of_today.to_i - offset * 24 * 3600 - 1
