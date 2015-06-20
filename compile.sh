@@ -30,7 +30,7 @@ __html_head() {
     border: 1px solid  #e4e4e4;
     padding: 10px;
     word-wrap: break-word;
-    max-width: 200px;
+    max-width: 400px;
   }
   td.status {
     width: 64px;
