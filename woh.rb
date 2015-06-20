@@ -135,7 +135,7 @@ end
 ########################################################################
 if ARGV.index("--option3")
   event = get_status(Time.now.to_i)
-  puts "#{event['status']}\t#{event['message']}"
+  puts "#{event['status']} #{event['message']}"
   exit(0)
 end
 
