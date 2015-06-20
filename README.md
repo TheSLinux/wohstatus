@@ -66,7 +66,7 @@ Each `YAML` file may contain `settings` or `events` attribute, as below
 
     ---
     settings:
-      name: Service name
+      name: Display name
       url: Link to service
     events:
       "timestamp 1": "A message"
