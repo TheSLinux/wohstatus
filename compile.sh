@@ -29,6 +29,7 @@ __html_head() {
   td {
     border: 1px solid  #e4e4e4;
     padding: 10px;
+    word-wrap: break-word;
   }
   td.status {
     width: 64px;
