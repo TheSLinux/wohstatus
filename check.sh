@@ -30,7 +30,7 @@ _check_mirror() {
 
 # ArchLinux (mirror)
 _archlinux="$(_check_mirror http://f.archlinuxvn.org/archlinux/lastsync)"
-_last_stat="$(./woh.rb --option3 < <(cat data/mirror-archlinux/*.yaml) | sed -e 's# (cf.*##g')"
+_last_stat="$(./woh.rb --option3 < <(cat data/mirror-archlinux/*.yaml))"
 if [[ "$_last_stat" != "$_archlinux" ]]; then
   echo "'$_last_stat' vs '$_archlinux'"
   echo y | ./add.sh data/mirror-archlinux $_archlinux
@@ -38,7 +38,7 @@ fi
 
 # ArchLinux (fpt mirror)
 _archlinux="$(_check_mirror http://mirror-fpt-telecom.fpt.net/archlinux/lastsync)"
-_last_stat="$(./woh.rb --option3 < <(cat data/mirror-archlinux-fpt/*.yaml) | sed -e 's# (cf.*##g')"
+_last_stat="$(./woh.rb --option3 < <(cat data/mirror-archlinux-fpt/*.yaml))"
 if [[ "$_last_stat" != "$_archlinux" ]]; then
   echo "'$_last_stat' vs '$_archlinux'"
   echo y | ./add.sh data/mirror-archlinux-fpt $_archlinux
@@ -46,7 +46,7 @@ fi
 
 # BlackArch (mirror)
 _archlinux="$(_check_mirror http://f.archlinuxvn.org/blackarch/lastsync)"
-_last_stat="$(./woh.rb --option3 < <(cat data/mirror-blackarch/*.yaml) | sed -e 's# (cf.*##g')"
+_last_stat="$(./woh.rb --option3 < <(cat data/mirror-blackarch/*.yaml))"
 if [[ "$_last_stat" != "$_archlinux" ]]; then
   echo "'$_last_stat' vs '$_archlinux'"
   echo y | ./add.sh data/mirror-blackarch $_archlinux
