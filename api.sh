@@ -21,8 +21,8 @@ _get_status() {
     last_code="$(echo $last_status | awk '{print $1}')"
     last_message="${last_status:$((${#last_code}+1))}"
     echo "\"$(basename $DIR)\":"
-    echo "  status: $last_code"
-    echo "  message: $last_message"
+    echo "  status: \"$last_code\""
+    echo "  message: \"$last_message\""
   done < <(find "./data/" -mindepth 1 -maxdepth 1 -type d )
 
   echo "error_code: 200"
