@@ -34,7 +34,8 @@ def get_status(timestamp)
     event["message"] = $events2[last_recored_date]["message"]
     event["status"] = $events2[last_recored_date]["status"]
 
-    event["message"] = "#{event["message"]} (cf. #{Time.at(last_recored_date)})"
+    event["message"] = "#{event["message"]}"
+    event["link"] =  Time.at(last_recored_date).to_s
   else
     event = {"status" => "bug", "message" => "Unknown status"}
   end
