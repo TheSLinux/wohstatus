@@ -19,6 +19,7 @@ You also need the popular tools: `find`, `grep`, `awk`.
 
 There are already sample input data and sample output pages.
 
+    $ export WOHSTATUS_TITLE="My services"
     $ ./compile.sh
 
 The output will be written to `output` directory.
