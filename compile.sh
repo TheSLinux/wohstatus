@@ -32,8 +32,15 @@ __html_head() {
     word-wrap: break-word;
     max-width: 400px;
   }
+  td.message {
+    width: 400px;
+  }
   td.status {
     width: 64px;
+    text-align: center;
+  }
+  td.status_thin {
+    padding: 10px;
     text-align: center;
   }
   td.service {

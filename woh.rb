@@ -110,21 +110,35 @@ end
 ########################################################################
 
 if ARGV.index("--option2")
-  puts "<table>"
-  count = 0
-  $events2.keys.sort.reverse.each do |timestamp|
-    next if timestamp > Time.now.to_i
-    count += 1
-    event = get_status(timestamp)
-    puts "<tr>"
-    puts "  <td class='timestamp'>#{Time.at(timestamp).strftime("%Y-%b-%d %H:%M:%S")}</td>"
-    puts "  <td class='status'><img class='icon' src='./images/#{event["status"]}.png' /></td>"
-    puts "  <td class='message'>#{event['message']}</td>"
-    puts "</tr>"
-  end
-  if count == 0
+  events_keys = $events2.keys.sort.reverse{|timestamp| timestamp > Time.now.to_i}
+  if events_keys.size == 0
+    puts "<table>"
     puts "<tr>"
     puts "  <td class='message'><strong>No event found</strong></td>"
+    puts "</tr>"
+    puts "</table>"
+    exit(0)
+  end
+
+  prev_date = ""
+
+  events_keys.each do |timestamp|
+    event = get_status(timestamp)
+
+    curr_date = Time.at(timestamp).strftime("%Y-%b-%d")
+    if not curr_date == prev_date
+      if not prev_date.empty?
+        puts "</table>"
+      end
+      puts "<h3 id=\"#{curr_date}\">#{curr_date}</h3>"
+      puts "<table>"
+    end
+    prev_date = curr_date
+
+    puts "<tr>"
+    puts "  <td class='timestamp'>#{Time.at(timestamp).strftime("%Y-%b-%d %H:%M:%S")}</td>"
+    puts "  <td class='status_thin'><img class='icon' src='./images/#{event["status"]}.png' /></td>"
+    puts "  <td class='message'>#{event['message']}</td>"
     puts "</tr>"
   end
   puts "</table>"
