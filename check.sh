@@ -19,10 +19,10 @@ _check_mirror() {
     echo "down Unable to detect time information from 'lastsync'"
   elif [[ "$offset" -ge 10080 ]]; then
     echo "down Mirror is useless (out-of-sync > 7 days)"
-  elif [[ "$offset" -ge 300 ]]; then
-    echo "limited Mirror is out of sync (offset > 5 hours)"
-  elif [[ "$offset" -ge 90 ]]; then
-    echo "info Mirror is out of sync (offset > 90 minutes)"
+  elif [[ "$offset" -ge 360 ]]; then
+    echo "limited Mirror is out of sync (offset > 6 hours)"
+  elif [[ "$offset" -ge 120 ]]; then
+    echo "info Mirror is out of sync (offset > 2 hours)"
   else
     echo "up Mirror is running well"
   fi
