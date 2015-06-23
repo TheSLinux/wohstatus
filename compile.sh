@@ -51,6 +51,10 @@ __html_head() {
     height: 16px;
   }
 
+  #legend td {
+    padding: 5px;
+  }
+
   @media screen and (max-device-width: 500px){
     body {
       width: 100%;
@@ -74,26 +78,32 @@ __html_tail() {
   cat <<'EOF'
 
 <h3>Status Legend</h3>
-<ul>
-  <li>
-    <img class="icon" src="./images/up.png" /> Service is up and running
-  </li>
-  <li>
-    <img class="icon" src="./images/down.png" /> Service is down
-  </li>
-  <li>
-    <img class="icon" src="./images/limited.png" /> Service is running but has limited function
-  </li>
-  <li>
-    <img class="icon" src="./images/maintenance.png" /> Service is being maintained
-  </li>
-  <li>
-    <img class="icon" src="./images/bug.png" /> Unknown status
-  </li>
-  <li>
-    <img class="icon" src="./images/info.png" /> Information
-  </li>
-</ul>
+<table id="legend">
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/up.png" /></td>
+    <td class="message">Service is up and running</td>
+  </tr>
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/down.png" /></td>
+    <td class="message">Service is down</td>
+  </tr>
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/limited.png" /></td>
+    <td class="message">Service is running but has limited function</td>
+  </tr>
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/maintenance.png" /></td>
+    <td class="message">Service is being maintained</td>
+  </tr>
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/bug.png" /></td>
+    <td class="message">Unknown status</td>
+  </tr>
+  <tr>
+    <td class="status_thin"><img class="icon" src="./images/info.png" /></td>
+    <td class="message">Information</td>
+  </tr>
+</table>
 
 <h3><a href="https://github.com/icy/wohstatus">Powered by <em>WohStatus</em></a></h3>
 <h3><a href="https://github.com/twilio/stashboard">Icons come from Stashboard</a></h3>
