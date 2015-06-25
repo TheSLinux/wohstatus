@@ -142,7 +142,8 @@ __option1() {
   < <(
     {
       [[ ! -f data/sort ]] || cat data/sort
-      find data/ -mindepth 1 -maxdepth 1 -type d
+      find data/ -mindepth 1 -maxdepth 1 -type d \
+      | sort
     } \
     | awk '!count[$0]++'
   )
